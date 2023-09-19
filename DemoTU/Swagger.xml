@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DemoTU</name>
+    </assembly>
+    <members>
+        <member name="T:DemoTU.Controllers.DiplomesController">
+            <summary>
+            Gestion des diplômes
+            </summary>
+        </member>
+        <member name="M:DemoTU.Controllers.DiplomesController.GetDiplomes">
+            <summary>
+            Récupération de tous les diplômes
+            </summary>
+            <returns>Liste des diplômes triés par niveau puis nom</returns>
+            <response code="200">Succès</response>
+        </member>
+        <member name="M:DemoTU.Controllers.DiplomesController.GetDiplomes(System.String)">
+            <summary>
+            Récupération d'un diplome dont le code est passé en paramètre
+            </summary>
+            <param name="code">Code du diplôme à récupérer</param>
+            <returns>Retourne le diplôme demandé</returns>
+            <response code="200">Succès</response>
+            <response code="404">Diplôme non trouvé</response>
+        </member>
+        <member name="M:DemoTU.Controllers.DiplomesController.GetPromotions(System.String)">
+            <summary>
+            Récupère les promotions liées au diplôme
+            </summary>
+            <param name="code">Code du diplôme à récupérer</param>
+            <returns>Liste des promotions</returns>
+            <response code="200">Succès</response>
+            <response code="400">Code vide ou null</response>
+            <response code="404">Le diplôme n'existe pas</response>
+        </member>
+        <member name="M:DemoTU.Controllers.DiplomesController.PutDiplomes(System.String,DemoTU.Models.Diplome)">
+            <summary>
+            Mise à jour d'un diplôme
+            </summary>
+            <param name="code">Code du diplôme à mettre à jour</param>
+            <param name="diplomes">Nouvelles informations de diplôme</param>
+            <returns></returns>
+            <response code="204">Diplôme mis à jour</response>
+            <response code="400">Code différent du code du diplôme envoyé</response>
+            <response code="404">Le diplôme n'existe pas</response>
+        </member>
+        <member name="M:DemoTU.Controllers.DiplomesController.PostDiplomes(DemoTU.Models.Diplome)">
+            <summary>
+            Création d'un diplôme
+            </summary>
+            <param name="diplomes">Diplôme à créer</param>
+            <returns>Retourne le diplôme créé</returns>
+            <response code="201">Le diplôme a été créé</response>
+            <response code="409">Le diplôme existe déjà</response>
+        </member>
+        <member name="M:DemoTU.Controllers.DiplomesController.DeleteDiplomes(System.String)">
+            <summary>
+            Suppression d'un diplôme
+            </summary>
+            <param name="code">Code du diplôme à supprimer</param>
+            <returns>Retourne le diplôme supprimé</returns>
+            <response code="200">Le diplôme a été supprimé</response>
+            <response code="404">Le diplôme n'existe pas</response>
+        </member>
+        <member name="M:DemoTU.Controllers.ElevesController.GetEleves">
+            <summary>
+            Récupération de la liste des élèves
+            </summary>
+            <returns>Liste des élèves</returns>
+            <response code="200">Liste des élèves</response>
+        </member>
+        <member name="M:DemoTU.Controllers.ElevesController.GetEleves(System.Int32)">
+            <summary>
+            Récupération d'un élève 
+            </summary>
+            <param name="id">Identifiant de l'élève</param>
+            <returns>Retourne un élève</returns>
+            <response code="200">Élève trouvé</response>
+            <response code="404">Élève non trouvé</response>
+        </member>
+        <member name="M:DemoTU.Controllers.ElevesController.PutEleves(System.Int32,DemoTU.Models.Eleve)">
+            <summary>
+            Mise à jour d'un élève
+            </summary>
+            <param name="id">Identifiant de l'élève</param>
+            <param name="eleves">Informations de l'élève</param>
+            <returns></returns>
+            <response code="204">Élève mis à jour</response>
+            <response code="400">L'id ne correspond pas à l'id de l'élève</response>
+            <response code="404">Élève non trouvé</response>
+        </member>
+        <member name="M:DemoTU.Controllers.ElevesController.PostEleves(DemoTU.Models.Eleve)">
+            <summary>
+            Création d'un élève
+            </summary>
+            <param name="eleves">Élève à créer</param>
+            <returns>Élève créé</returns>
+            <response code="201">Élève créé</response>
+        </member>
+        <member name="M:DemoTU.Controllers.ElevesController.DeleteEleves(System.Int32)">
+            <summary>
+            Suppression d'un élève
+            </summary>
+            <param name="id">Identifiant de l'élève</param>
+            <returns>Élève supprimé</returns>
+            <response code="200">Élève supprimé</response>
+            <response code="404">Élève non trouvé</response>
+        </member>
+        <member name="M:DemoTU.Controllers.PromotionsController.GetPromotions">
+            <summary>
+            Récupération de toutes les promotions
+            </summary>
+            <returns>Liste des promotions</returns>
+            <response code="200">Liste des promotions</response>
+        </member>
+        <member name="M:DemoTU.Controllers.PromotionsController.GetPromotions(System.Int32)">
+            <summary>
+            Récupération d'une promotion
+            </summary>
+            <param name="id">Identifiant de la promotion</param>
+            <returns>Retourne la promotion</returns>
+            <response code="200">Promotion demandée</response>
+            <response code="404">Promotion non trouvée</response>
+        </member>
+        <member name="M:DemoTU.Controllers.PromotionsController.GetEleves(System.Int32)">
+            <summary>
+            Récupère la liste des élèves d'une promotion
+            </summary>
+            <param name="id">Identifiant de la promotion</param>
+            <returns>Liste des élèves</returns>
+            <response code="200">Liste des élèves</response>
+            <response code="404">La promotion n'existe pas</response>
+        </member>
+        <member name="M:DemoTU.Controllers.PromotionsController.PutPromotions(System.Int32,DemoTU.Models.Promotion)">
+            <summary>
+            Met à jour une promotion
+            </summary>
+            <param name="id">Identifiant de la promotion</param>
+            <param name="promotions">Informations de la promotion</param>
+            <returns></returns>
+            <response code="204">Promotion mise à jour</response>
+            <response code="400">Id différent de l'id de la promotion envoyée</response>
+            <response code="404">La promotion n'existe pas</response>
+        </member>
+        <member name="M:DemoTU.Controllers.PromotionsController.PostPromotions(DemoTU.Models.Promotion)">
+            <summary>
+            Création d'une promotion
+            </summary>
+            <param name="promotions">Promotion à créer</param>
+            <returns>Promotion créée</returns>
+            <response code="201">Promotion créée</response>
+        </member>
+        <member name="M:DemoTU.Controllers.PromotionsController.DeletePromotions(System.Int32)">
+            <summary>
+            Suppression d'une promotion
+            </summary>
+            <param name="id">Identifiant de la promotion à supprimer</param>
+            <returns>Promotion supprimée</returns>
+            <response code="200">Promotion supprimée</response>
+            <response code="404">Promotion non trouvée</response>
+        </member>
+    </members>
+</doc>
